@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan'); //日誌工具
 
 var indexRouter = require('./routes/index');
-var cccRouter = require('./API/router');  // 自己設定的
+var cccRouter = require('./router');  // 自己設定的
 
 var app = express();
 
