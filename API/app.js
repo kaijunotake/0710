@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan'); //日誌工具
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var cccRouter = require('./API/router');  // 自己設定的
 
 var app = express();
@@ -27,11 +26,7 @@ app.use(cors({
   allowedHeaders: ['Access-Control-Allow-Headers', 'Content-Type', 'account']
 }));
 
-
-
-
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/ccc', cccRouter)
 
 // catch 404 and forward to error handler
