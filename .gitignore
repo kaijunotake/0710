@@ -9,6 +9,4 @@ public
 pure info
 DB.sql
 index.html
-package-lock.json
-package.json
 server.js
