@@ -1,1 +1,34 @@
-123
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+<div id="g_id_onload" data-client_id="2207456863227-ndo9mppf6ucokabutjanubd1i2qr3i4u.apps.googleusercontent.com" data-callback="onSignIn1"></div>
+<div class="g_id_signin" data-type="standard"></div>
+
+目前狀態：
+
+<span id="GOOGLE_STATUS_1"></span>
+
+<script>
+	// 登入之後
+	function onSignIn1(response) {
+		var credential = response.credential,
+			profile = JSON.parse(decodeURIComponent(escape(window.atob(credential.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))))), // 對 JWT 進行解碼
+			target = document.getElementById("GOOGLE_STATUS_1"),
+			html = "";
+
+		html += "ID: " + profile.sub + "<br/>";
+		html += "會員暱稱： " + profile.name + "<br/>";
+		html += "會員頭像：" + profile.picture + "<br/>";
+		html += "會員 email：" + profile.email + "<br/>";
+		target.innerHTML = html;
+	}
+</script>
+
+</body>
+</html>
