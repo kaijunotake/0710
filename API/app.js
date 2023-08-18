@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //install cors的同源政策設定
 app.use(cors({
-  origin: ['http://localhost:3000'], //這裡放果渣的前端網址
+  origin: ['http://localhost:5173'], //這裡放果渣的前端網址
   methods: 'GET,HEAD,PUT,POST,DELETE,OPTIONS',
   allowedHeaders: ['Access-Control-Allow-Headers', 'Content-Type', 'account']
 }));

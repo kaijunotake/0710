@@ -96,13 +96,11 @@ router.post('/login', async(req,res) => {   // 登入, body, 用戶收藏的卡�
             }
             
         } else {
-            res.send("status: 200") //這裡不是200
-            res.send("帳號不存在，請確認輸入無誤!!");
+            res.send({status:200, accountExists: false});
         }
     } catch(err){
         console.error("Error executing query:", err);
-        res.send("status: 500")
-        res.send({ error: "Internal Server Error" });
+        res.send({status:500, resData:{ error: "Internal Server Error" }});
     }
 })
 
